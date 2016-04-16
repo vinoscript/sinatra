@@ -1,13 +1,18 @@
-<!-- <h1><%= @message.title %></h1> -->
-<h2>
-  <p>
-    Author: <%= @message.author %>
-  </p>
-</h2>
+
 
 <p>
-  <%= @message.content %>
+  Author: <%= @message.author %>
 </p>
+
+<p>
+  Message: <%= @message.content %>
+</p>
+
+<% if @message.url %>
+  <p>
+    Link: <a href="http://<%= @message.url %>"><%= @message.url %></a>
+  </p>
+<% end %>
 
 <hr/>
 <a href="/messages">Back to All Messages</a>
