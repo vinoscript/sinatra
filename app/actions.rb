@@ -9,7 +9,6 @@ get '/messages' do
 end
 
 post '/messages' do
-  binding.pry
   @message = Message.new(
     title: params[:title],
     content: params[:content],
@@ -21,5 +20,10 @@ end
 
 get '/messages/new' do
   erb :'messages/new'
+end
+
+get '/messages/:id' do
+  @message = Message.find params[:id]
+  erb :'messages/show'
 end
 
