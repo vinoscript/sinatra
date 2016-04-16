@@ -1,4 +1,4 @@
-
+<h3>Message Details</h3>
 
 <p>
   Author: <%= @message.author %>
@@ -13,6 +13,10 @@
     Link: <a href="http://<%= @message.url %>"><%= @message.url %></a>
   </p>
 <% end %>
+
+<p>
+  <small>Posted at: <%= @message.created_at %></small>
+</p>
 
 <hr/>
 <a href="/messages">Back to All Messages</a>
