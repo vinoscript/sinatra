@@ -1,5 +1,6 @@
 # Homepage (Root path)
 require 'pry'
+
 get '/' do
   erb :index
 end
@@ -27,13 +28,9 @@ post '/messages' do
   end
 end
 
-
 get '/messages/:id' do
   @message = Message.find params[:id]
   erb :'messages/show'
 end
 
-get '/messages/:url' do
-  redirect 'http://url'
-end
 

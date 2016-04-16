@@ -4,9 +4,11 @@
     <p>
       Message: <a href="/messages/<%= message.id %>"><%= message.content %></a>
     </p>
-    <p>
-      
-    </p>
+    <% if message.url %>
+      <p>
+        URL: <a href="http://<%= message.url %>"><%= message.url %></a>
+      </p>
+    <% end %>
   </div>
 <% end %>
 
