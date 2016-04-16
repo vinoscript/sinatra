@@ -19,4 +19,20 @@
 </p>
 
 <hr/>
+<h4>Other posts from this author:</h4>
+
+
+  <% Message.where(author: @message.author).find_each do |message| %>
+    <p><small>
+      <strong><%= message.author %>:</strong>   
+      <a href="/messages/<%= message.id %>"><%= message.content %></a>
+      <% if message.url != nil %>
+        Link: <a href="http://<%= message.url %>"><%= message.url %></a>
+      <% end %>
+      Posted at: <%= message.created_at %>
+    </small></p>
+    <hr/>
+  <% end %>
+
+<hr/>
 <a href="/messages">Back to All Messages</a>
