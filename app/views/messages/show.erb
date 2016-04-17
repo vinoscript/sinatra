@@ -22,7 +22,7 @@
 <h4>Other posts from this author:</h4>
 
 
-  <% Message.where(author: @message.author).find_each do |message| %>
+  <% Message.where(author: @message.author).where.not(id: @message.id).find_each do |message| %>
     <p><small>
       <strong><%= message.author %>:</strong>   
       <a href="/messages/<%= message.id %>"><%= message.content %></a>
